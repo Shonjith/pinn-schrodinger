@@ -1,11 +1,11 @@
 # Physics-Informed Neural Network (PINN)
-## Nonlinear Schrödinger Equation Solver (PyTorch + GPU)
+## Nonlinear Schrodinger Equation Solver (PyTorch + GPU)
 
 ---
 
 ## Overview
 
-This project implements a Physics-Informed Neural Network (PINN) to solve the one-dimensional nonlinear Schrödinger equation:
+This project implements a Physics-Informed Neural Network (PINN) to solve the one-dimensional nonlinear Schrodinger equation:
 
 i h_t + 0.5 h_xx + |h|^2 h = 0
 
@@ -33,7 +33,7 @@ Training is performed by minimizing:
 - Initial condition loss  
 - PDE residual loss at collocation points  
 
-The Schrödinger equation is enforced using automatic differentiation.
+The Schrodinger equation is enforced using automatic differentiation.
 
 ---
 
@@ -75,7 +75,7 @@ is shown below:
 
 ![Result](result_Figure_1.png)
 
-The model captures the localized soliton-like behavior of the nonlinear Schrödinger equation.
+The model captures the localized soliton-like behavior of the nonlinear Schrodinger equation.
 
 ---
 
