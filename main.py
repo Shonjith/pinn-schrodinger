@@ -3,6 +3,7 @@ from src.model import PINN
 from src.data import initial_points, collocation_points
 from src.train import train
 from src.visualize import visualize_solution
+from src.visualize import visualize_solution, plot_time_slice
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
@@ -18,4 +19,6 @@ data = {
 train(model, optimizer, data)
 
 visualize_solution(model, device)
+
+plot_time_slice(model, device, t_value=0.8)
 

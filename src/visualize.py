@@ -28,4 +28,38 @@ def visualize_solution(model, device):
     plt.ylabel("x")
     plt.title("PINN Solution of Nonlinear Schrödinger Equation")
     plt.tight_layout()
+
+    plt.savefig("results/result_spacetime.png", dpi=300)
+
+    plt.show()
+
+def plot_time_slice(model, device, t_value=0.8):
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import torch
+
+    model.eval()
+
+    x = np.linspace(-5, 5, 400)
+    t = np.full_like(x, t_value)
+
+    x_tensor = torch.tensor(x, dtype=torch.float32).view(-1, 1).to(device)
+    t_tensor = torch.tensor(t, dtype=torch.float32).view(-1, 1).to(device)
+
+    with torch.no_grad():
+        uv = model(torch.cat([t_tensor, x_tensor], dim=1))
+        u = uv[:, 0].cpu().numpy()
+        v = uv[:, 1].cpu().numpy()
+
+    h_abs = np.sqrt(u**2 + v**2)
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(x, h_abs, linewidth=2)
+    plt.xlabel("x")
+    plt.ylabel("|h(t, x)|")
+    plt.title(f"Solution at t = {t_value}")
+    plt.grid(True)
+
+    plt.savefig(f"results/time_slice_t_{t_value}.png", dpi=300)
+
     plt.show()
