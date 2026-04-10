@@ -49,6 +49,7 @@ The Schrodinger equation is enforced using automatic differentiation.
 ---
 
 ## Project Structure
+```
 
 PINN_SCHRODINGER/
 │
@@ -62,8 +63,9 @@ PINN_SCHRODINGER/
 ├── main.py
 ├── requirements.txt
 └── result_Figure_1.png
-
+```
 ---
+
 
 ## Result
 
