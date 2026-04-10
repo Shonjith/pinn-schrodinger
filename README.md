@@ -73,7 +73,8 @@ The magnitude of the learned solution
 
 is shown below:
 
-![Result](result_Figure_1.png)
+![Result](result_spacetime.png) 
+![Result 2](time_slice_t_0.8.png)
 
 The model captures the localized soliton-like behavior of the nonlinear Schrodinger equation.
 
